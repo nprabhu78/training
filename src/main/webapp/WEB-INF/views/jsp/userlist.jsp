@@ -11,6 +11,15 @@
 <body>
 	<div class="generic-container">
         <div class="panel panel-default">
+			<c:if test="${not empty msg}">
+			    <div class="alert alert-${css} alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" 
+	                                aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+				<strong>${msg}</strong>
+			    </div>
+			</c:if>        
               <!-- Default panel contents -->
             <div class="panel-heading"><span class="lead">List of Users </span></div>
             <table class="table table-hover">

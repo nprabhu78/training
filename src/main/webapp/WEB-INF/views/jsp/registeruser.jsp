@@ -11,7 +11,15 @@
 <body>
 	<div class="generic-container">
     <div class="well lead">User Registration Form</div>
-  
+  			<c:if test="${not empty msg}">
+			    <div class="alert alert-${css} alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" 
+	                                aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+				<strong>${msg}</strong>
+			    </div>
+			</c:if>
 	    <sf:form method="POST" modelAttribute="user" class="form-horizontal">
 	        <sf:input type="hidden" path="id" id="id"/>
 	        <div class="row">
@@ -54,20 +62,16 @@
 	        <div class="row">
             	<div class="form-group col-md-12">
 		                <label class="col-md-3 control-lable" for="pwd">Password: </label>
-		            <c:choose>
-		        	<c:when test="${not edit}">
 		                <div class="col-md-7">
 		                	<sf:password path="password" id="pwd" class="form-control input-sm" />
 		                	<div class="has-error">
 		               			<sf:errors path="password" class="help-inline"/>
 		               		</div>
 		               	</div>
-	               	</c:when>
-	            	</c:choose>
 	            </div>
 	        </div>
 	
-<%--		<div class="row">
+		<div class="row">
             	<div class="form-group col-md-12">
 	                <label class="col-md-3 control-lable" for="confpwd">Confirm Password: </label>
 	                <div class="col-md-7">
@@ -77,7 +81,7 @@
 	               		</div>
 	               	</div>
 	            </div>
-	        </div>	--%>
+	        </div>	
 	        
 	        <div class="row">
             	<div class="form-group col-md-12">

@@ -8,11 +8,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+//import javax.persistence.Temporal;
+//import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="USER")
@@ -53,11 +54,11 @@ public class User {
 	
 	@NotNull	
 	@Column(name="JOIN_DATE", nullable=false)
-	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date joinDate;
 	
-/*	@NotEmpty
-	private String confirmPassword;*/
+	@NotEmpty
+	private String confirmPassword;
 	
 	public String getFirstName() {
 		return firstName;
@@ -113,7 +114,11 @@ public class User {
 	public void setId(int id){
 		this.id = id;
 	}
-/*	public String getConfirmPassword() {
+	public String getConfirmPassword() {
 		return confirmPassword;
-	}*/
+	}
+	
+	public void setConfirmPassword(String confirmPassword){
+		this.confirmPassword = confirmPassword;
+	}
 }

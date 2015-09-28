@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
         }
 	}
 
-	public void deleteUserById(String id) {
+	public void deleteUserById(int id) {
 		userDAO.deleteUserById(id);
 	}
 

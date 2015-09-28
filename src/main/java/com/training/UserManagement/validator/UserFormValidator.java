@@ -44,9 +44,9 @@ public class UserFormValidator implements Validator{
 			errors.rejectValue("password", "NotEmpty.user.password");
 		}
 		// check if the password and confirm password fields match
-/*		if (!user.getPassword().equals(user.getConfirmPassword())) {
+		if (!user.getPassword().equals(user.getConfirmPassword())) {
 			errors.rejectValue("confirmPassword", "Diff.userform.confirmPassword");
-		}*/
+		}
 		
 		if(user.getAddress()==null || user.getAddress()==""){
 			errors.rejectValue("address", "NotEmpty.user.address");

@@ -34,10 +34,10 @@ public class UserDAOImpl implements UserDAO {
 
 
 	@Override
-	public void deleteUserById(String userId) {
+	public void deleteUserById(int id) {
 		Session session = sessionFactory.getCurrentSession();
 		Criteria crit = session.createCriteria(User.class);
-        crit.add(Restrictions.eq("userId", userId));
+        crit.add(Restrictions.eq("id", id));
         User user = (User)crit.uniqueResult();
         session.delete(user);		
 	}
