@@ -1,0 +1,10 @@
+com\training\UserManagement\delegate\LoginDelegate.class
+com\training\UserManagement\beanmodels\User.class
+com\training\UserManagement\config\HibernateConfiguration.class
+com\training\UserManagement\beanmodels\LoginBean.class
+com\training\UserManagement\service\UserServiceImpl.class
+com\training\UserManagement\validator\UserFormValidator.class
+com\training\UserManagement\service\UserService.class
+com\training\UserManagement\dao\UserDAOImpl.class
+com\training\UserManagement\web\UserController.class
+com\training\UserManagement\dao\UserDAO.class
